@@ -6,7 +6,11 @@ from models import db, Plant
 
 with app.app_context():
 
+    print('deleting data')
+
     Plant.query.delete()
+
+    print('seeding!!')
 
     aloe = Plant(
         id=1,
@@ -26,3 +30,5 @@ with app.app_context():
 
     db.session.add_all([aloe, zz_plant])
     db.session.commit()
+
+    print('seeding complete!!')
